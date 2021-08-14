@@ -2,8 +2,8 @@ library(tidyverse)
 library(httr)
 library(jsonlite)
 
-# The fetchWord function that's actually going to fetch dictionary answer
-fetchWord = function(word) {
+# The fetch_word function that's actually going to fetch dictionary answer
+fetch_word = function(word) {
   
   # Download API data for word
   response = GET(
@@ -50,15 +50,15 @@ fetchWord = function(word) {
 # Testing -----------------------------------------------------------------
 
 # Function test 1: 
-fetchWord(word = "abide")
+fetch_word(word = "abide")
 
 # Not found test:
-fetchWord(word = "aggrandizement") 
+fetch_word(word = "aggrandizement") 
 
 # Several elements (definitions) in one.
-fetchWord(word = "able") 
+fetch_word(word = "able") 
 
-# Working loop! ---- 
+# Working loop ---- 
 
 # Each loop is limited to 250 words. The API allows 250 request at once. After
 # more than that it throws error 429.
@@ -67,7 +67,7 @@ lim = 251
 for (word in voc_ls$word[i:100000]) {
   if (i <= lim) {
     print(word)
-    voc_ls$definition[i] = fetchWord(word = word)
+    voc_ls$definition[i] = fetch_word(word = word)
     i = i+1
     print(i)
   }
