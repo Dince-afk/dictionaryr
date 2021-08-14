@@ -1,5 +1,5 @@
 # dictionaryr
-Look up and fetch definitions for words in R. 
+Look up and fetch definitions for words in R. Very early stuff. Anyone interested to contribute is welcome! :) 
 
 
 ```r
