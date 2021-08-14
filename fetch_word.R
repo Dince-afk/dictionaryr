@@ -47,10 +47,11 @@ fetch_word = function(word) {
   }
 }
 
+
 # Testing -----------------------------------------------------------------
 
 # Function test 1: 
-fetch_word(word = "abide")
+fetch_word(word = "program")
 
 # Not found test:
 fetch_word(word = "aggrandizement") 
